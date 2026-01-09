@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: royalmeatsbackend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Royalhalalmeats
+    username: postgres
+    password: newpassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: akaborn97@gmail.com
+    password: ogeo duvh tlci vxch
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enabled: true
+            required: true
+          ssl:
+            trust: smtp.gmail.com  # <-- optional but helpful
+        debug: true                # <-- optional for troubleshooting
+server:
+  port: 8080
+
