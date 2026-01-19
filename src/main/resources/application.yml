@@ -1,23 +1,30 @@
+server:
+  port: ${PORT:8080}
+
 spring:
   application:
     name: royalmeatsbackend
+
   datasource:
-    url: jdbc:postgresql://localhost:5432/Royalhalalmeats
-    username: postgres
-    password: newpassword
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
+
   sql:
     init:
-      mode: always
+      mode: never
+
   mail:
     host: smtp.gmail.com
     port: 587
-    username: akaborn97@gmail.com
-    password: ogeo duvh tlci vxch
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -25,9 +32,3 @@ spring:
           starttls:
             enabled: true
             required: true
-          ssl:
-            trust: smtp.gmail.com  # <-- optional but helpful
-        debug: true                # <-- optional for troubleshooting
-server:
-  port: 8080
-
